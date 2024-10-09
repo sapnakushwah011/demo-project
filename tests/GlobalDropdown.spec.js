@@ -14,7 +14,6 @@ test.describe('GlobalDropdown Component', () => {
     await page.getByRole('button', { name: 'Submit' }).click();
     await page.getByTestId('ArrowDropDownIcon').locator('path').click();
     await page.getByRole('menuitem', { name: 'Logout' }).click();
-    await page.pause();
   });
 
 //   test('should display options when data is loaded', async ({ page }) => {
