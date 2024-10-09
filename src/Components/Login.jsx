@@ -38,10 +38,10 @@ const Login = () => {
             display: "flex",
             flexDirection: "column",
             width: "35%",
-            height: "530px",
+            height: "470px",
             padding: "30px",
             background: "white",
-            gap: 2,
+            gap: 1,
           }}
         >
           <Typography
