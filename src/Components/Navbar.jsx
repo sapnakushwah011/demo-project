@@ -10,7 +10,7 @@ const Navbar = () => {
           display: "flex",
           alignItems: "center",
           marginLeft: "10px",
-          fontSize: 18,
+          fontSize: 20,
           fontWeight: "bold",
         }}
       >
