@@ -1,6 +1,6 @@
 // runTests.js
 const { execSync } = require('child_process');
-const componentTestMap = require('./componentTestMapping');
+const componentTestMap = require('./componentTestMapping.js');
 
 // Get the list of changed files in the current PR
 const changedFiles = execSync('git diff --name-only origin/master...HEAD').toString().split('\n').filter(Boolean);
