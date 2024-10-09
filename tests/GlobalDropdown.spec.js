@@ -7,7 +7,7 @@ test.describe('GlobalDropdown Component', () => {
     await page.goto('https://ross-ofr.techcarrel.in/');
   });
 
-  test('Login test', async ({ page }) => {
+  test('Login Test', async ({ page }) => {
 
     await page.getByPlaceholder('Enter Username').fill('rahulphalke123@gmail.com');
     await page.getByPlaceholder('Password').fill('Mighty@1234');
