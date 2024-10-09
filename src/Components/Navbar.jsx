@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div style={{ backgroundColor: "beige" }}>
+    <div style={{ backgroundColor: "green" }}>
       <div
         style={{
           height: "50px",
@@ -14,7 +14,7 @@ const Navbar = () => {
           fontWeight: "bold",
         }}
       >
-        DEMO APP
+        Demo App
       </div>
     </div>
   );
