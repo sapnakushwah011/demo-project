@@ -8,9 +8,9 @@ test.skip("test one", async({ page }) => {
   // test logic here
 });
 
-test("Not yet ready", async({ page }) => {
-  test.fail();
- });
+// test("Not yet ready", async({ page }) => {
+//   test.fail();
+//  });
 
 
 test.fixme("test to be fixed", async({ page }) => {

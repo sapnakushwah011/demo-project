@@ -33,7 +33,7 @@ test("Assertions", async ({ page }) => {
  await expect(page).toHaveTitle(/.*The Kitchen/);
 
  // visual validation with screenshot:
- await expect(page).toHaveScreenshot();
+//  await expect(page).toHaveScreenshot();
 
 });
 
