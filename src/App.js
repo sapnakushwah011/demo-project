@@ -10,10 +10,10 @@ function App() {
   return (
     <>
     <Login />
-    <CommonDatePicker/>
-    <GlobalDropdown/>
+    {/* <CommonDatePicker/> */}
+    {/* <GlobalDropdown/> */}
     {/* <GlobalMultiDropdown /> */}
-    <MyTable />
+    {/* <MyTable /> */}
     </>
   );
 }
