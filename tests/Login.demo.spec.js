@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test.only("Demo Login test 1", async ({ page }) => {
+test("Demo Login test 1", async ({ page }) => {
   await page.goto("https://demo.applitools.com/");
   // await page.pause();
 

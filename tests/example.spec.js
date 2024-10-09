@@ -8,7 +8,7 @@ const { test, expect } = require("@playwright/test");
 //   await expect(page).toHaveTitle(/Playwright/);
 // });
 
-for (var i = 0; i < 1000; i++) {
+for (var i = 0; i < 100; i++) {
   test('test ' + i, async ({ page }) => {
     await page.goto("https://playwright.dev/");
 
