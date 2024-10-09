@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import CommonDatePicker from './Components/CommonDatePicker';
+import GlobalDropdown from './Components/GlobalDropdown';
+import Login from './Components/Login';
+import MyTable from './Components/MyTable'
+// import GlobalMultiDropdown from './Components/GlobalMultiDropdown';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Login />
+    <CommonDatePicker/>
+    <GlobalDropdown/>
+    {/* <GlobalMultiDropdown /> */}
+    <MyTable />
+    </>
   );
 }
 
