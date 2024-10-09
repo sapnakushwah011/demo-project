@@ -3,7 +3,7 @@ const componentTestMap = require('./componentTestMapping');
 
 try {
     // Get the list of changed files in the current branch
-    const changedFiles = execSync('git diff --name-only origin/main HEAD').toString().split('\n').filter(Boolean);
+    const changedFiles = execSync('git diff --name-only origin/master HEAD').toString().split('\n').filter(Boolean);
 
     console.log('Changed files:', changedFiles); // Log changed files for debugging
 
