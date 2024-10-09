@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Box, Button, FormControl, FormLabel, TextField, Typography } from "@mui/material";
 import "./LoginCss.css";
+import { Toast } from "react-bootstrap";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -13,7 +14,7 @@ const Login = () => {
     e.preventDefault();
 
     if( username && email && password === confirmPassword ) {
-     alert("Sign up successfully");
+     Toast("Sign up successfully");
 
      // reset 
      setUsername("");
@@ -41,7 +42,7 @@ const Login = () => {
             height: "470px",
             padding: "30px",
             background: "white",
-            gap: 1,
+            gap: 2,
           }}
         >
           <Typography
