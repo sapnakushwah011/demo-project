@@ -18,6 +18,6 @@ test('get started link', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
 
-// test('failing the test', ({ page }) => {
-//   test.fail();
-// });
+test('failing the test', ({ page }) => {
+  test.fail();
+});
