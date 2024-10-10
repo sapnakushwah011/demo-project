@@ -13,7 +13,7 @@ function App() {
     <Navbar/>
     <Login />
     {/* <CommonDatePicker/> */}
-    {/* <GlobalDropdown/> */}
+    <GlobalDropdown/>
     {/* <GlobalMultiDropdown /> */}
     {/* <MyTable /> */}
     </>

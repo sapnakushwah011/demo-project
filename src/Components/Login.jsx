@@ -38,7 +38,7 @@ const Login = () => {
             display: "flex",
             flexDirection: "column",
             width: "35%",
-            height: "50px",
+            height: "470px",
             padding: "30px",
             background: "white",
             gap: 1,

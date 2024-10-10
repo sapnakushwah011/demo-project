@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div style={{ backgroundColor: "green" }}>
+    <div style={{ backgroundColor: "beige" }}>
       <div
         style={{
           height: "50px",
@@ -10,7 +10,7 @@ const Navbar = () => {
           display: "flex",
           alignItems: "center",
           marginLeft: "10px",
-          fontSize: 20,
+          fontSize: 25,
           fontWeight: "bold",
         }}
       >

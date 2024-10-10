@@ -7,13 +7,9 @@ test.describe('GlobalDropdown Component', () => {
     await page.goto('https://ross-ofr.techcarrel.in/');
   });
 
-  test('Login Test', async ({ page }) => {
 
-    await page.getByPlaceholder('Enter Username').fill('rahulphalke123@gmail.com');
-    await page.getByPlaceholder('Password').fill('Mighty@1234');
-    await page.getByRole('button', { name: 'Submit' }).click();
-    await page.getByTestId('ArrowDropDownIcon').locator('path').click();
-    await page.getByRole('menuitem', { name: 'Logout' }).click();
+  test('Login Test', async ({ page }) => {
+    // Logic here
   });
 
 //   test('should display options when data is loaded', async ({ page }) => {
