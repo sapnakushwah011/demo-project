@@ -1,4 +1,4 @@
-name: Playwright test
+name: Playwright Test
 
 on:
   push:
@@ -23,9 +23,6 @@ jobs:
 
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-
-    - name: Print working directory
-      run: pwd  
 
     - name: Run Playwright tests
       id: run_tests
