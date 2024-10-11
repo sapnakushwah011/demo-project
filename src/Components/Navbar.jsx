@@ -14,7 +14,7 @@ const Navbar = () => {
           fontWeight: "bold",
         }}
       >
-        Demo React App
+        React Demo App
       </div>
     </div>
   );
