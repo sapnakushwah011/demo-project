@@ -15,7 +15,7 @@ const Navbar = () => {
           fontFamily:"cursive"
         }}
       >
-       Demo App
+       Demo App React
       </div>
     </div>
   );
