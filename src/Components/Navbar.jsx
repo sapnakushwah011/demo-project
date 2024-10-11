@@ -11,7 +11,7 @@ const Navbar = () => {
           alignItems: "center",
           marginLeft: "10px",
           fontSize: 25,
-          fontWeight: "bold",
+          fontWeight = "bold",
         }}
       >
         Demo App

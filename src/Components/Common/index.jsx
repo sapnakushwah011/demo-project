@@ -5,7 +5,7 @@ export const RenderEqupment = (e) => {
   return (
     <>
       {e?.isAED ? <DoneIcon color="success" /> : <CloseIcon color="error" />}
-      / <CloseIcon color="error" />
+       <CloseIcon color="error" />
     </>
   );
 }

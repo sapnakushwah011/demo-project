@@ -28,6 +28,10 @@ module.exports = defineConfig({
     // launchOptions: {
     //   slowMo: 1000
     // },
+    /*  Set to true for headless mode */
+    headless: false, 
+    /* Default browser */
+    browserName: 'chromium', 
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 

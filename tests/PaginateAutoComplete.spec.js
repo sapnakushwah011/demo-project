@@ -1,133 +1,122 @@
-import { mount, test, expect } from '@playwright/experimental-ct-react';
-import PaginateAutoComplete from '../components/PaginateAutoComplete';
+import { test, expect } from '@playwright/test';
 
 test.describe('PaginateAutoComplete Component', () => {
-  
-  const defaultProps = {
-    dropDownName: "parent_account_id",
-    apiEndpoint: "/account/parents-account-dropdowns",
-    idKey: "account_id",
-    valueKey: "account_main_contact_firstname",
-    parentKey: "parentAccount",
-    tokenKey: 'ross_token',
-    // onSelect: jest.fn(),
-    placeholder: "-- Select One --",
-    useApiSearch: true,
-    isCache: false,
-    multiple: false,
-    defaultValue: null,
-    excludeRecords: [],
-    selectDisabled: false,
-    shouldFetchOnOpen: true,
-    showCheckBox: false
-  };
 
-  test('should render component with default props', async ({ page }) => {
-    const component = await mount(page, <PaginateAutoComplete {...defaultProps} />);
-    const input = component.locator('input');
-    await expect(input).toHaveAttribute('placeholder', '-- Select One --');
+  test.setTimeout(60000); // Set to 60 seconds
+
+  test.beforeEach(async({ page}) => {
+    await page.goto('https://ross-ofr.techcarrel.in/');
+    await page.getByPlaceholder('Username').fill('rahulphalke123@gmail.com');
+    await page.getByPlaceholder('Password').fill('Mighty@1234');
+    await page.getByRole('button', { name: 'Submit' }).click();
+    await page.goto('https://ross-ofr.techcarrel.in/dashboard');
+    await page.goto('https://ross-ofr.techcarrel.in/admin-account'); // Adjust URL
+  })
+
+  test.afterEach(async({ page }) => {
+    // await page.pause();
+    await page.close();
+  })
+
+  // Initial rendering of the component
+  test('should render Autocomplete with default props', async ({ page }) => {
+    // Verify component renders with default placeholder
+    const autocomplete = page.locator('input[id="Demo-parent_account_id"]');
+    await expect(autocomplete).toBeVisible();
   });
 
-//   test('should fetch data on open if shouldFetchOnOpen is true', async ({ page }) => {
-//     const fetchSpy = jest.spyOn(global, 'fetch');
-//     await mount(page, <PaginateAutoComplete {...defaultProps} />);
-//     const input = page.locator('input');
+  test('should render placeholder', async ({ page }) => {
+    // Verify component renders with default placeholder
+    const autocomplete = page.locator('input[id="Demo-parent_account_id"]');
+    await expect(autocomplete).toHaveAttribute('placeholder', '-- Select One --');
+  });
+
+  // // Test fetching data on open
+  test('should fetch data when opened', async ({ page }) => {
+
+    // Simulate opening of the dropdown
+    await page.locator('input[id="Demo-parent_account_id"]').click();
+    await expect(page.locator("text=1 Dobby Zappers")).toBeVisible();
+    await expect(page.locator("text=12-08-2024 Account Testing")).toBeVisible();
+
+    // Check if data is loaded into the dropdown
+    // const options = page.locator('input').getByRole('combobox');
+    // await expect(options).toHaveText('1 Dobby Zappers');
+  });
+
+  // Test API fetch with debounce on input change
+  test('should fetch and filter results based on search input', async ({ page }) => {
+
+    const inputField = page.locator('input[id="Demo-parent_account_id"]');
     
-//     // Open the dropdown
-//     await input.click();
-    
-//     // Ensure API call is made
-//     expect(fetchSpy).toHaveBeenCalledWith(expect.stringContaining(defaultProps.apiEndpoint), expect.anything());
-//   });
+    // Type into the input field (debounced search)
+    await inputField.type('test', { delay: 100 });
 
-//   test('should display loading spinner while data is fetching', async ({ page }) => {
-//     const component = await mount(page, <PaginateAutoComplete {...defaultProps} />);
-//     const input = component.locator('input');
+    // Check if data is fetched after debounce
+    await page.waitForTimeout(1000);  // Wait for debounce to complete
+    await expect(page.locator("text=10-09-24_Test")).toBeVisible();
+    await expect(page.locator("text=12-08-2024 Account Testing")).toBeVisible(); 
+  });
 
-//     await input.click(); // Open dropdown to trigger fetch
-//     const spinner = component.locator('.MuiAutocomplete-loading');
-//     await expect(spinner).toBeVisible();
-//   });
+  //  Test scrolling and pagination
+  // test('should load more options when scrolling', async ({ page }) => {
+  //   // Open the dropdown by clicking the input field
+  //   await page.click('input[id="Demo-parent_account_id"]');
+  
+  //   // Locate the dropdown list container (adjust selector as needed)
+  //   const dropdownList = page.locator('input[id="Demo-parent_account_id"]');
+  //   await dropdownList.evaluate(node => node.scrollTo(0, node.scrollHeight));
+  //   await expect(page.locator('text=Aiken Buzzdog')).toBeVisible();
+  // });
 
-//   test('should select a single option', async ({ page }) => {
-//     const onSelectMock = jest.fn();
-//     const component = await mount(page, <PaginateAutoComplete {...defaultProps} onSelect={onSelectMock} />);
-//     const input = component.locator('input');
+  // Test disabling the select
+  // test('should disable the Autocomplete when `selectDisabled` prop is true', async ({ page }) => {
+  //   await page.goto('/your-component-url?selectDisabled=true'); // Pass selectDisabled prop
 
-//     // Simulate fetching and selecting option
-//     await input.click();
-//     const option = component.locator('li').first(); // Assume the first option in dropdown
-//     await option.click();
+  //   // Verify the input is disabled
+  //   const inputField = page.locator('.MuiAutocomplete-input');
+  //   await expect(inputField).toBeDisabled();
+  // });
 
-//     expect(onSelectMock).toHaveBeenCalledWith(expect.objectContaining({ target: { value: expect.any(String) } }));
-//   });
+  // // Test custom render option
+  // test('should use custom render option if provided', async ({ page }) => {
+  //   await page.goto('/your-component-url?customRenderOption=true');  // Adjust based on your prop handling
 
-//   test('should handle multiple selection when multiple=true', async ({ page }) => {
-//     const component = await mount(page, <PaginateAutoComplete {...defaultProps} multiple={true} />);
-//     const input = component.locator('input');
-//     await input.click(); // Open dropdown
-    
-//     // Select multiple options
-//     const options = component.locator('li');
-//     await options.nth(0).click();
-//     await options.nth(1).click();
-    
-//     const selectedChips = component.locator('.MuiChip-root');
-//     await expect(selectedChips).toHaveCount(2); // Expect 2 chips for 2 selected items
-//   });
+  //   // Open dropdown
+  //   await page.click('.MuiAutocomplete-root input');
 
-//   test('should filter options based on excludeRecords', async ({ page }) => {
-//     const excludeId = 3;
-//     const component = await mount(page, <PaginateAutoComplete {...defaultProps} excludeRecords={[excludeId]} />);
-//     const input = component.locator('input');
-//     await input.click();
+  //   // Check if custom render logic is applied
+  //   const options = page.locator('.render-option.custom');  // Assuming custom class is added in custom render
+  //   await expect(options).toHaveCount(20);
+  // });
 
-//     const options = component.locator('li');
-//     const excludedOption = options.filter({ hasText: excludeId.toString() });
+  // // Test clearing the search input
+  // test('should clear search and reset data when input is cleared', async ({ page }) => {
+  //   await page.goto('/your-component-url');
 
-//     await expect(excludedOption).toHaveCount(0); // Expect the excluded record not to be displayed
-//   });
+  //   const inputField = page.locator('.MuiAutocomplete-input');
 
-//   test('should cache results if isCache=true', async ({ page }) => {
-//     const fetchSpy = jest.spyOn(global, 'fetch');
-//     const component = await mount(page, <PaginateAutoComplete {...defaultProps} isCache={true} />);
-    
-//     await component.locator('input').click(); // Open dropdown to fetch
-//     expect(fetchSpy).toHaveBeenCalledTimes(1); // Called first time
-    
-//     await component.locator('input').click(); // Open again
-//     expect(fetchSpy).toHaveBeenCalledTimes(1); // Should not call again due to caching
-//   });
+  //   // Type into the input field
+  //   await inputField.type('test', { delay: 100 });
 
-//   test('should trigger debounced search on input change', async ({ page }) => {
-//     const fetchSpy = jest.spyOn(global, 'fetch');
-//     const component = await mount(page, <PaginateAutoComplete {...defaultProps} useApiSearch={true} />);
-    
-//     const input = component.locator('input');
-//     await input.fill('test search'); // Type in search
+  //   // Clear the input field
+  //   await inputField.fill('');
 
-//     await page.waitForTimeout(300); // Wait for debounce
+  //   // Verify if data is reset
+  //   const options = page.locator('.MuiAutocomplete-option');
+  //   await expect(options).toHaveCount(20);  // Should reload initial data after clearing search
+  // });
 
-//     expect(fetchSpy).toHaveBeenCalledWith(expect.stringContaining('search=test+search'), expect.anything());
-//   });
+  // // Test loading state while fetching
+  // test('should show loading indicator while data is being fetched', async ({ page }) => {
+  //   await page.goto('/your-component-url');
 
-//   test('should clear search and reset data on clear input', async ({ page }) => {
-//     const component = await mount(page, <PaginateAutoComplete {...defaultProps} />);
-//     const input = component.locator('input');
-    
-//     await input.fill('test search'); // Type in search
-//     await input.press('Escape'); // Clear the search input
-    
-//     await expect(input).toHaveValue(''); // Expect search to be cleared
-//   });
+  //   // Open dropdown to trigger fetch
+  //   await page.click('.MuiAutocomplete-root input');
 
-//   test('should not fetch data if selectDisabled is true', async ({ page }) => {
-//     const fetchSpy = jest.spyOn(global, 'fetch');
-//     await mount(page, <PaginateAutoComplete {...defaultProps} selectDisabled={true} />);
-    
-//     const input = page.locator('input');
-//     await input.click(); // Try to open dropdown
-    
-//     expect(fetchSpy).not.toHaveBeenCalled(); // Should not fetch data when disabled
-//   });
+  //   // Check if loading indicator appears
+  //   const loadingIndicator = page.locator('.MuiAutocomplete-loading');
+  //   await expect(loadingIndicator).toBeVisible();
+  // });
+
 });
