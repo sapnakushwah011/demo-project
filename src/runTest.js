@@ -2,6 +2,7 @@ const { execSync } = require('child_process');
 const componentTestMap = require('./componentTestMapping');
 
 try {
+    execSync('git fetch origin');
     // Get the list of changed files in the current branch
     const changedFiles = execSync('git diff --name-only origin/master HEAD').toString().split('\n').filter(Boolean);
 

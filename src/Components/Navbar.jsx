@@ -12,10 +12,9 @@ const Navbar = () => {
           marginLeft: "10px",
           fontSize: 25,
           fontWeight: "bold",
-          fontFamily:"cursive"
         }}
       >
-       Demo Appgggg
+       Demo App
       </div>
     </div>
   );
