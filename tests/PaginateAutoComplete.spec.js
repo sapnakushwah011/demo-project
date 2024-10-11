@@ -9,7 +9,7 @@ test.describe('PaginateAutoComplete Component', () => {
     await page.getByPlaceholder('Username').fill('rahulphalke123@gmail.com');
     await page.getByPlaceholder('Password').fill('Mighty@1234');
     await page.getByRole('button', { name: 'Submit' }).click();
-    await page.goto('https://ross-ofr.techcarrel.in/dashboard');
+    await expect(page).toHaveURL('https://ross-ofr.techcarrel.in/dashboard');
     await page.goto('https://ross-ofr.techcarrel.in/admin-account'); // Adjust URL
   })
 
