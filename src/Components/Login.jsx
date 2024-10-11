@@ -49,7 +49,7 @@ const Login = () => {
             variant="h4"
             sx={{ width: "100%", fontSize: "clamp(2rem, 10vw, 1.15rem)", fontWeight: "bold", textAlign: "center" }}
           >
-            SIGN Uiiiiii
+            SIGN UP
           </Typography>
           <FormControl style={{ gap: 10 }}>
             <FormLabel htmlFor="username">Enter username</FormLabel>
