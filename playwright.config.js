@@ -25,9 +25,9 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     // video: 'on',
-    // launchOptions: {
-    //   slowMo: 1000
-    // },
+    launchOptions: {
+      slowMo: 1000
+    },
     /*  Set to true for headless mode */
     headless: false, 
     /* Default browser */
