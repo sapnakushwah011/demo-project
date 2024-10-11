@@ -15,6 +15,7 @@ const Navbar = () => {
         }}
       >
         Demo App
+        add some more feature to it.
       </div>
     </div>
   );
