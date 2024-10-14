@@ -5,22 +5,19 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                echo 'Installing dependencies...'
-                sh 'npm install' // Run npm install
+                sh 'npm install' 
             }
         }
 
         stage('Run Tests') {
             steps {
-                echo 'Running tests...'
-                sh 'npm test' // Run tests
+                sh 'npm test' 
             }
         }
         
         stage('Deploy') {
             steps {
-                echo 'Deploying application...'
-                sh 'npm run deploy' // Deploy your application
+                sh 'npm run deploy'
             }
         }
     }
