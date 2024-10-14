@@ -1,23 +1,27 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs "Node 14.x"
+    }
+
     stages {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install' 
+                bat 'start /B npm install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npm test' 
+                bat 'start /B npm test'
             }
         }
         
         stage('Deploy') {
             steps {
-                sh 'npm run deploy'
+                bat 'start /B npm run deploy'
             }
         }
     }
