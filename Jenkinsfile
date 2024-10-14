@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                echo 'Checking out code...'
-                sh 'git clone https://github.com/sapnakushwah011/demo-project.git' // Clone your repository
-            }
-        }
 
         stage('Install Dependencies') {
             steps {
