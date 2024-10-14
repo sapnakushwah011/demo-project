@@ -20,7 +20,7 @@ test.describe("GlobalTable Component", () => {
   });
 
   // Initial rendering of the component
-  test("should render Global Table with default props", async ({ page }) => {
+      test("should render Global Table with default props", async ({ page }) => {
     const Table = await page.locator(".base-table");
     await expect(Table).toBeVisible();
   });
