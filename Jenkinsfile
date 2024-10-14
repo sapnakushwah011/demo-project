@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs "Node 14.x"
+    }
+
     stages {
 
         stage('Install Dependencies') {
