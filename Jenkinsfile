@@ -1,36 +1,33 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs "Node 14.x" 
-    }
-
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/sapnakushwah011/demo-project.git'
+                echo 'Checking out code...'
+                sh 'git clone https://github.com/sapnakushwah011/demo-project.git' // Clone your repository
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                echo 'Installing dependencies...'
+                sh 'npm install' // Run npm install
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npm test -- --watchAll=false'
+                echo 'Running tests...'
+                sh 'npm test' // Run tests
             }
         }
-    }
-
-    post {
-        always {
-            echo 'Test complete'
-        }
-        failure {
-            echo 'Build failed!'
+        
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application...'
+                sh 'npm run deploy' // Deploy your application
+            }
         }
     }
 }
