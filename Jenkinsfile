@@ -36,7 +36,7 @@ pipeline {
 
             post {
                 always {
-                    junit './test-results/results.xml'
+                    junit 'test-results/results.xml'
                 }
                 failure {
                     echo "Build failed because tests failed"
