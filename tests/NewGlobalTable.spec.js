@@ -93,7 +93,7 @@ test.describe("GlobalTable Component", () => {
 
     await page.getByRole("button", { name: "Submit" }).click();
     await page.getByRole("cell", { name: "Account ting" });
-
+// new commit added
     // reset data on clear filter
     await page.getByRole("button", { name: "Clear Filter" }).click();
     await expect(page.locator("tbody tr")).toHaveCount(50);
