@@ -19,13 +19,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'start /B npm install'
+                bat 'npm install'
             }
         }
 
         stage('Node Build') {
             steps {
-                bat 'start /B npm run build'
+                bat 'npm run build'
             }
         }
 
