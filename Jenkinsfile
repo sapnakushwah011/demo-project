@@ -38,7 +38,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'npx playwright test NewGlobalTable.spec.js --project chromium '
+                bat 'jenkins/scripts/test.bat '
             }
 
             post {

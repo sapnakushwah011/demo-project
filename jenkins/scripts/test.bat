@@ -1,0 +1,3 @@
+@echo off
+echo Running Playwright tests for NewGlobalTable.spec.js on Chromium...
+npx playwright test NewGlobalTable.spec.js --project=chromium
