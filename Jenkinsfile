@@ -49,7 +49,7 @@ pipeline {
                         bat 'git revert --no-edit HEAD'
                         
                         // Push the revert to the remote repository
-                        bat 'git push master'
+                        bat 'git push origin master'
                         error("Test failed, commit has been reverted.")
                     }
                 }
