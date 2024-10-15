@@ -44,13 +44,8 @@ pipeline {
                         // Revert the last commit if tests failed
                         bat 'git config user.email sapnakushwah072@gmail.com'
                         bat 'git config user.name sapnakushwah011'
-
                         // Revert the last commit
                         bat 'git revert --no-edit HEAD'
-                        
-                        // Push the revert to the remote repository
-                        bat 'git push origin master --verbose'
-
                         error("Test failed, commit has been reverted.")
                     }
                 }
