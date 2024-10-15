@@ -19,6 +19,12 @@ pipeline {
             }
         }
 
+        stage('Node build') {
+            steps {
+                bat 'start /B npm run build'
+            }
+        }
+
         stage('Run Tests') {
             steps {
                 bat 'start /B npm test'
