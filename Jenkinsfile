@@ -31,7 +31,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat './jenkins/scripts/test.sh'
+                sh 'jenkins/scripts/test.sh'
             }
         }
         
