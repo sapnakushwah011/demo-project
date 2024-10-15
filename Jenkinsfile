@@ -31,7 +31,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh './jenkins/scripts/test.sh'
+                bat 'start /B npx playwright test'
             }
         }
         
