@@ -8,6 +8,6 @@ test("sample test", async({ page }) => {
     await page.getByPlaceholder('Password').fill('Mighty@1234');
     await page.getByRole('button', { name: 'Submit' }).click();
     await page.getByTestId('ArrowDropDownIcon').click();
-    await page.getByRole('menuitem', { name: 'Logout' }).click();
+    await page('menuitem', { name: 'Logout' }).click();
    
 });
