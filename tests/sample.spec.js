@@ -12,7 +12,7 @@ import { test, expect } from '@playwright/test';
    
 // });
 
-test("sample test", ({ page }) => {
+test("sample test failing", ({ page }) => {
     test.fail();
 
 })
