@@ -25,7 +25,11 @@ pipeline {
 
         stage('Node Build') {
             steps {
-                bat 'npm run build'
+                script {
+                    withEnv(['CI=false']) {
+                        bat 'npm run build'
+                    }
+                }
             }
         }
 
