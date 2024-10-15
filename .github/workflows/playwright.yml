@@ -26,8 +26,7 @@ jobs:
 
     - name: Run Playwright tests
       id: run_tests
-      # run: node src/runTest.js
-      run: npx playwright test
+      run: node runTest.js
       continue-on-error: true  # Continue even if tests fail, so we can handle the failure
 
     - name: Upload Playwright report
