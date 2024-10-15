@@ -20,7 +20,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 bat 'npm install'
-                
+
                 // Install Playwright browsers
                 bat 'npx playwright install'
             }
@@ -58,12 +58,6 @@ pipeline {
                         error("Test failed, commit has been reverted.")
                     }
                 }
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                bat 'npm run deploy'
             }
         }
     }
