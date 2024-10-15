@@ -31,11 +31,17 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                script {
-                    try {
-                        bat 'start /B npx playwright test '
-                    } catch (Exception e) {
-                        echo 'Tests failed, reverting the last commit'
+                bat 'start /B npx playwright test '
+            }
+
+            post {
+                always {
+                    junit 'path/to/junit.xml'
+                }
+                failure {
+                    echo "Build failed because tests failed"
+                    script {
+                        // Revert the last commit if tests failed
                         bat 'git revert --no-edit HEAD'
                         error("Test failed, commit has been reverted.")
                     }
