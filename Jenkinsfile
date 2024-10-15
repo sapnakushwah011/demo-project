@@ -33,7 +33,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        bat 'npx playwright test'
+                        bat 'start /B npx playwright test'
                     } catch (Exception e) {
                         echo 'Tests failed, reverting the last commit'
                         bat 'git revert --no-edit HEAD'
