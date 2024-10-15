@@ -36,7 +36,8 @@ pipeline {
 
             post {
                 always {
-                    junit 'test-results/results.xml'
+                    junit 'test-results/results.xml' // Archive the JUnit results
+                    archiveArtifacts artifacts: 'test-results/**', allowEmptyArchive: true // Archive the results as artifacts
                 }
                 failure {
                     echo "Build failed because tests failed"
