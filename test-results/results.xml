@@ -1,0 +1,318 @@
+<testsuites id="" name="" tests="66" failures="3" skipped="42" errors="0" time="183.793637">
+<testsuite name="example.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="chromium" tests="3" failures="1" skipped="0" time="6.969" errors="0">
+<testcase name="test to check title" classname="example.spec.js" time="2.791">
+</testcase>
+<testcase name="get started link" classname="example.spec.js" time="3.635">
+</testcase>
+<testcase name="failing the test" classname="example.spec.js" time="0.543">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+<failure message="example.spec.js:21:1 failing the test" type="FAILURE">
+<![CDATA[  [chromium] › example.spec.js:21:1 › failing the test ─────────────────────────────────────────────
+
+    Expected to fail, but passed.
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="GlobalDropdown.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="chromium" tests="1" failures="0" skipped="0" time="9.602" errors="0">
+<testcase name="GlobalDropdown Component › Login Test" classname="GlobalDropdown.spec.js" time="9.602">
+</testcase>
+</testsuite>
+<testsuite name="Login.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="chromium" tests="1" failures="0" skipped="0" time="5.243" errors="0">
+<testcase name="Login test" classname="Login.spec.js" time="5.243">
+</testcase>
+</testsuite>
+<testsuite name="Navbar.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="chromium" tests="1" failures="1" skipped="0" time="55.038" errors="0">
+<testcase name="test" classname="Navbar.spec.js" time="55.038">
+<failure message="Navbar.spec.js:14:5 test" type="FAILURE">
+<![CDATA[  [chromium] › Navbar.spec.js:14:5 › test ──────────────────────────────────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toHaveTitle(expected)
+
+    Locator: locator(':root')
+    Expected string: "Logiin"
+    Received string: "React App"
+    Call log:
+      - expect.toHaveTitle with timeout 5000ms
+      - waiting for locator(':root')
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "React App"
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "React App"
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "React App"
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "React App"
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "React App"
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "React App"
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "React App"
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "React App"
+
+
+      14 | test("test", async ({ page }) => {
+      15 |    await page.goto("http://localhost:3000/");
+    > 16 |    await expect(page).toHaveTitle("Logiin");
+         |                       ^
+      17 | });
+
+        at D:\Demo\react-demo-project\tests\Navbar.spec.js:16:23
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="NewGlobalTable.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="chromium" tests="9" failures="0" skipped="0" time="127.736" errors="0">
+<testcase name="GlobalTable Component › should render Global Table with default props" classname="NewGlobalTable.spec.js" time="14.391">
+</testcase>
+<testcase name="GlobalTable Component › should show search bar if searchable is true" classname="NewGlobalTable.spec.js" time="14.15">
+</testcase>
+<testcase name="GlobalTable Component › should search on button click only." classname="NewGlobalTable.spec.js" time="16.337">
+</testcase>
+<testcase name="GlobalTable Component › to render data on page change " classname="NewGlobalTable.spec.js" time="16.145">
+</testcase>
+<testcase name="GlobalTable Component › should reset search and fetch all data" classname="NewGlobalTable.spec.js" time="13.187">
+</testcase>
+<testcase name="GlobalTable Component › should display no data found message when there are no results" classname="NewGlobalTable.spec.js" time="16.273">
+</testcase>
+<testcase name="GlobalTable Component › show show filter sidebar " classname="NewGlobalTable.spec.js" time="11.263">
+</testcase>
+<testcase name="GlobalTable Component › should show filter data" classname="NewGlobalTable.spec.js" time="13.086">
+</testcase>
+<testcase name="GlobalTable Component › should show filter data on multiple selection" classname="NewGlobalTable.spec.js" time="12.904">
+</testcase>
+</testsuite>
+<testsuite name="PaginateAutoComplete.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="chromium" tests="6" failures="0" skipped="0" time="103.778" errors="0">
+<testcase name="PaginateAutoComplete Component › should render Autocomplete with default props" classname="PaginateAutoComplete.spec.js" time="14.606">
+</testcase>
+<testcase name="PaginateAutoComplete Component › should render placeholder" classname="PaginateAutoComplete.spec.js" time="16.955">
+</testcase>
+<testcase name="PaginateAutoComplete Component › should fetch data when opened" classname="PaginateAutoComplete.spec.js" time="13.695">
+</testcase>
+<testcase name="PaginateAutoComplete Component › should fetch and filter results based on search input" classname="PaginateAutoComplete.spec.js" time="13.855">
+</testcase>
+<testcase name="PaginateAutoComplete Component › should load more options when scrolling" classname="PaginateAutoComplete.spec.js" time="13.387">
+</testcase>
+<testcase name="PaginateAutoComplete Component › should clear search and reset data when input is cleared" classname="PaginateAutoComplete.spec.js" time="31.28">
+</testcase>
+</testsuite>
+<testsuite name="sample.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="chromium" tests="1" failures="0" skipped="1" time="31.993" errors="0">
+<testcase name="sample test" classname="sample.spec.js" time="31.993">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="example.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="firefox" tests="3" failures="1" skipped="0" time="3.817" errors="0">
+<testcase name="test to check title" classname="example.spec.js" time="1.893">
+</testcase>
+<testcase name="get started link" classname="example.spec.js" time="1.607">
+</testcase>
+<testcase name="failing the test" classname="example.spec.js" time="0.317">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+<failure message="example.spec.js:21:1 failing the test" type="FAILURE">
+<![CDATA[  [firefox] › example.spec.js:21:1 › failing the test ──────────────────────────────────────────────
+
+    Expected to fail, but passed.
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="GlobalDropdown.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="firefox" tests="1" failures="0" skipped="1" time="0.666" errors="0">
+<testcase name="GlobalDropdown Component › Login Test" classname="GlobalDropdown.spec.js" time="0.666">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="Login.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="firefox" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Login test" classname="Login.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="Navbar.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="firefox" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="test" classname="Navbar.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="NewGlobalTable.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="firefox" tests="9" failures="0" skipped="9" time="0" errors="0">
+<testcase name="GlobalTable Component › should render Global Table with default props" classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › should show search bar if searchable is true" classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › should search on button click only." classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › to render data on page change " classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › should reset search and fetch all data" classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › should display no data found message when there are no results" classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › show show filter sidebar " classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › should show filter data" classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › should show filter data on multiple selection" classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="PaginateAutoComplete.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="firefox" tests="6" failures="0" skipped="6" time="0" errors="0">
+<testcase name="PaginateAutoComplete Component › should render Autocomplete with default props" classname="PaginateAutoComplete.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="PaginateAutoComplete Component › should render placeholder" classname="PaginateAutoComplete.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="PaginateAutoComplete Component › should fetch data when opened" classname="PaginateAutoComplete.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="PaginateAutoComplete Component › should fetch and filter results based on search input" classname="PaginateAutoComplete.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="PaginateAutoComplete Component › should load more options when scrolling" classname="PaginateAutoComplete.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="PaginateAutoComplete Component › should clear search and reset data when input is cleared" classname="PaginateAutoComplete.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="sample.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="firefox" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="sample test" classname="sample.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="example.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="webkit" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="test to check title" classname="example.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="get started link" classname="example.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="failing the test" classname="example.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="GlobalDropdown.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="webkit" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="GlobalDropdown Component › Login Test" classname="GlobalDropdown.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="Login.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="webkit" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Login test" classname="Login.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="Navbar.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="webkit" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="test" classname="Navbar.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="NewGlobalTable.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="webkit" tests="9" failures="0" skipped="9" time="0" errors="0">
+<testcase name="GlobalTable Component › should render Global Table with default props" classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › should show search bar if searchable is true" classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › should search on button click only." classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › to render data on page change " classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › should reset search and fetch all data" classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › should display no data found message when there are no results" classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › show show filter sidebar " classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › should show filter data" classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="GlobalTable Component › should show filter data on multiple selection" classname="NewGlobalTable.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="PaginateAutoComplete.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="webkit" tests="6" failures="0" skipped="6" time="0" errors="0">
+<testcase name="PaginateAutoComplete Component › should render Autocomplete with default props" classname="PaginateAutoComplete.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="PaginateAutoComplete Component › should render placeholder" classname="PaginateAutoComplete.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="PaginateAutoComplete Component › should fetch data when opened" classname="PaginateAutoComplete.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="PaginateAutoComplete Component › should fetch and filter results based on search input" classname="PaginateAutoComplete.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="PaginateAutoComplete Component › should load more options when scrolling" classname="PaginateAutoComplete.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="PaginateAutoComplete Component › should clear search and reset data when input is cleared" classname="PaginateAutoComplete.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="sample.spec.js" timestamp="2024-10-15T07:10:45.444Z" hostname="webkit" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="sample test" classname="sample.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>
