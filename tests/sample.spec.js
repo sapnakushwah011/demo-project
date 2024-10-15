@@ -1,4 +1,4 @@
-// import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 // test("sample test", async({ page }) => {
 
@@ -11,3 +11,8 @@
 //     await page('menuitem', { name: 'Logout' }).click();
    
 // });
+
+test("sample test", ({ page }) => {
+    test.fail();
+
+})
