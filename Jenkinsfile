@@ -5,6 +5,10 @@ pipeline {
        nodejs 'nodejs'
    }
 
+   environment {
+       CI = 'true'
+   }
+
     stages {
 
         stage('checkout git') {
