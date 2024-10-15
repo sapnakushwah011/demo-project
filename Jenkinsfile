@@ -26,16 +26,6 @@ pipeline {
             }
         }
 
-        stage('Node Build') {
-            steps {
-                script {
-                    withEnv(['CI=false']) {
-                        bat 'npm run build'
-                    }
-                }
-            }
-        }
-
         stage('Run Tests') {
             steps {
                 bat 'jenkins/scripts/test.bat '
