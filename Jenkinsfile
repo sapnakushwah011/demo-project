@@ -42,6 +42,8 @@ pipeline {
                     echo "Build failed because tests failed"
                     script {
                         // Revert the last commit if tests failed
+                        bat 'git config user.email sapnakushwah072@gmail.com'
+                        bat 'git config user.name sapnakushwah011'
                         bat 'git revert --no-edit HEAD'
                         error("Test failed, commit has been reverted.")
                     }
