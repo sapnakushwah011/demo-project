@@ -56,7 +56,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                bat 'start /B npm run deploy'
+                bat 'npm run deploy'
             }
         }
     }
