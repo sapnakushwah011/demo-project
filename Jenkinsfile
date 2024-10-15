@@ -44,7 +44,7 @@ pipeline {
                         bat 'git config --global user.name sapnakushwah011'
                         // Revert the last commit
                         bat 'git revert --no-edit HEAD'
-                        bat 'git push origin master'
+                        bat 'git push origin HEAD'
                         error("Test failed, commit has been reverted.")
                     }
                 }
