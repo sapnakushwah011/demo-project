@@ -33,7 +33,7 @@ function CommonDatePicker({
     if (!value) return "N/A";
     const date = moment(value).format("YYYY-MM-DD");
 
-    if(date.toLowerCase() =='invalid date') {
+    if(date.toLowerCase() ==='invalid date') {
       return "N/A";
     }
 
@@ -46,7 +46,7 @@ function CommonDatePicker({
 
 
   useEffect(() => {
-    if (!CalVal || CalVal=='unknown') return ;
+    if (!CalVal || CalVal==='unknown') return ;
     if(moment(CalVal).format("MM/DD/YYYY") === 'Invalid Date') return "N/A";
     const v1 = moment(CalVal).format("MM/DD/YYYY");
     handleCalendarChange(v1);
