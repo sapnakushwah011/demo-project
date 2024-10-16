@@ -23,7 +23,7 @@ pipeline {
                 sh 'npm ci'
 
                 // Install Playwright browsers
-                sh 'npx playwright install-deps'
+                sh 'echo "$$$TCwdwA4T85NuWM@#@#" | sudo -S npx playwright install-deps'
             }
         }
 
