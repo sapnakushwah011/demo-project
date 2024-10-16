@@ -19,10 +19,10 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                sh 'npm install'
 
                 // Install Playwright browsers
-                bat 'npx playwright install'
+                sh 'npx playwright install'
             }
         }
 
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
                     withEnv(['CI=false']) {
-                        bat 'npm run build'
+                        sh 'npm run build'
                     }
                 }
             }
@@ -39,7 +39,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'jenkins/scripts/test.bat '
+                sh 'jenkins/scripts/test.bat '
             }
 
             post {
@@ -51,11 +51,11 @@ pipeline {
                     echo "Build failed because tests failed"
                     script {
                         // Revert the last commit if tests failed
-                        bat 'git config --global user.email sapnakushwah072@gmail.com'
+                        sh 'git config --global user.email sapnakushwah072@gmail.com'
                         bat 'git config --global user.name sapnakushwah011'
                         // Revert the last commit
-                        bat 'git revert --no-edit HEAD'
-                        bat 'git push origin HEAD'
+                        sh 'git revert --no-edit HEAD'
+                        sh 'git push origin HEAD'
                         error("Test failed, commit has been reverted.")
                     }
                 }
@@ -64,7 +64,7 @@ pipeline {
 
         stage('deploy') {
             steps {
-               bat 'npm run deploy'
+               sh 'npm run deploy'
             }
         }
     }
