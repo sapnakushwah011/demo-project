@@ -26,6 +26,12 @@ pipeline {
             }
         }
 
+        stage('Npm build') {
+            steps {
+                bat 'npm run build'
+            }
+        }
+
         stage('Run Tests') {
             steps {
                 bat 'jenkins/scripts/test.bat '
@@ -48,6 +54,12 @@ pipeline {
                         error("Test failed, commit has been reverted.")
                     }
                 }
+            }
+        }
+
+        stage('deploy') {
+            steps {
+                bat 'npm run deploy' 
             }
         }
     }
