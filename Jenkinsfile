@@ -23,7 +23,7 @@ pipeline {
                 sh 'npm ci'
 
                 // Install Playwright browsers
-                sh '-S npx playwright install-deps'
+                sh 'npx playwright install-deps'
             }
         }
 
