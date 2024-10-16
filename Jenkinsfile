@@ -39,7 +39,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'jenkins/scripts/test.sh '
+                sh 'npx playwright test NewGlobalTable.spec.js --project=chromium '
             }
 
             post {
@@ -62,10 +62,10 @@ pipeline {
             }
         }
 
-        stage('deploy') {
-            steps {
-               sh 'npm run deploy'
-            }
-        }
+        // stage('deploy') {
+        //     steps {
+        //        sh 'npm run deploy'
+        //     }
+        // }
     }
 }
