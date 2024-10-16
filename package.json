@@ -38,7 +38,7 @@
     "build": "react-scripts build",
     "test": "playwright test --reporter=dot",
     "eject": "react-scripts eject",
-    "deploy": "scp -r ./build user@yourserver:/path/to/deployment"
+    "deploy":"scp -r build/ user@yourserver:/var/www/demo-app"
   },
   "eslintConfig": {
     "extends": [
