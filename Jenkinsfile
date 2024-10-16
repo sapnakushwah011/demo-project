@@ -26,9 +26,14 @@ pipeline {
             }
         }
 
-        stage('Npm build') {
+
+        stage('Node Build') {
             steps {
-                bat 'set CI=false && npm run build'
+                script {
+                    withEnv(['CI=false']) {
+                        bat 'npm run build'
+                    }
+                }
             }
         }
 
@@ -59,7 +64,7 @@ pipeline {
 
         stage('deploy') {
             steps {
-                bat 'npm run deploy' 
+               bat 'npm run deploy'
             }
         }
     }
