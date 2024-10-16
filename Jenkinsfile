@@ -21,9 +21,9 @@ pipeline {
             steps {
                 sh 'npm install'
                 sh 'npm ci'
-                
+
                 // Install Playwright browsers
-                sudo 'npx playwright install-deps'
+                sh 'npx playwright install-deps'
             }
         }
 
