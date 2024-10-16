@@ -39,7 +39,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'jenkins/scripts/test.bat '
+                sh 'jenkins/scripts/test.sh '
             }
 
             post {
