@@ -18,10 +18,10 @@ function CommonDatePicker({
   calName,
   CalVal,
   HandleChange,
-   disabled = false,
-   isRequired = false,
-   minDate,
-   maxDate,
+  disabled = false,
+  isRequired = false,
+  minDate,
+  maxDate,
 }) {
   // const inputReference = useRef(null);
   const [DateValueState, setDateValueState] = useState(null);
