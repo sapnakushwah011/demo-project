@@ -1,0 +1,8 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="1" errors="0" time="1055.3547409999999">
+<testsuite name="CreateAccount.spec.js" timestamp="2024-10-19T04:50:35.157Z" hostname="chromium" tests="1" failures="0" skipped="1" time="1026.872" errors="0">
+<testcase name="Create Account Component › should allow form submission when all required fields are filled" classname="CreateAccount.spec.js" time="1026.872">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>

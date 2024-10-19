@@ -17,7 +17,7 @@ test.describe('GlobalMultiDropdown component', () => {
     await expect(page).toHaveURL("https://ross-ofr.techcarrel.in/dashboard");
     await page.getByRole("button", { name: "Go to Account Listings" }).click();
     await expect(page).toHaveURL("https://ross-ofr.techcarrel.in/accounts-listing");
-    await page.getByRole("button", { name: "Advanced Filters" }).click();
+    
   });
   
   // Clean up the context after all tests are finished
@@ -30,20 +30,26 @@ test.describe('GlobalMultiDropdown component', () => {
   });
 
   test('should render the dropdown with default options', async() => {
+    await page.getByRole("button", { name: "Advanced Filters" }).click();
+    // opening the dropdown
     const dropdown = page.locator('.css-1n1n5qs-control').first();
     await expect(dropdown).toBeVisible();
   });
 
   test('should show loading state when fetching data', async() => {
+    await page.getByRole("button", { name: "Advanced Filters" }).click();
+    // opening the dropdown
     await page.locator('.css-1n1n5qs-control').first().click();
- 
     await expect(page.locator('text=Loading...')).toBeVisible();
   });
 
   test("should fetch data", async() => {
+    await page.getByRole("button", { name: "Advanced Filters" }).click();
+
+    // opening the dropdown
     await page.locator('.css-1n1n5qs-control').first().click();
 
-    // verifying data(options) to be visible
+    // verifying data(options) to be visibal
     const firstOption = page.getByRole('option', { name: "Active" });
     await expect(firstOption).toBeVisible();
 
@@ -66,6 +72,8 @@ test.describe('GlobalMultiDropdown component', () => {
 */
 
 test("selected options should show in the input box", async() => {
+    await page.getByRole("button", { name: "Advanced Filters" }).click();
+    // opening the dropdown
     await page.locator('.css-1n1n5qs-control').first().click();
 
     //selecting options
@@ -82,6 +90,8 @@ test("selected options should show in the input box", async() => {
 });
 
  test("should remove individual selection", async() => {
+    await page.getByRole("button", { name: "Advanced Filters" }).click();
+    // opening the dropdown
     await page.locator('.css-1n1n5qs-control').first().click();
 
     // selecting options
@@ -90,6 +100,8 @@ test("selected options should show in the input box", async() => {
  });
 
  test("should remove all selected options", async() => {
+   await page.getByRole("button", { name: "Advanced Filters" }).click();
+   // opening the dropdown
    await page.locator('.css-1n1n5qs-control').first().click();
 
   // selecting options
